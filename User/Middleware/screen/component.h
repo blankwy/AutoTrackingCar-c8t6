@@ -13,4 +13,6 @@ void TopBar(void);
 
 void ModeTab(uint8_t id, uint8_t is_selected, uint8_t page, char* name);
 
+void StopIcon(void);
+
 #endif

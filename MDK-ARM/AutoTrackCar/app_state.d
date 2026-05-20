@@ -1,7 +1,5 @@
 autotrackcar/app_state.o: ..\User\App\app_state.c ..\User\App\app_state.h \
-  ..\User\Middleware\screen\screen.h ..\User\Hardware\oled\oled.h \
-  ..\User\Hardware\oled\font.h ..\Core\Inc\main.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h \
+  ..\Core\Inc\main.h ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h \
   ..\Core\Inc\stm32f1xx_hal_conf.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h \
@@ -23,4 +21,7 @@ autotrackcar/app_state.o: ..\User\App\app_state.c ..\User\App\app_state.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
+  ..\User\Hardware\key\key.h ..\User\Middleware\screen\screen.h \
+  ..\User\Hardware\oled\oled.h ..\Core\Inc\i2c.h \
+  ..\User\Hardware\oled\OLED_Data.h \
   ..\User\Middleware\screen\component.h

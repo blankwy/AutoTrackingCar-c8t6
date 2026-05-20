@@ -21,4 +21,5 @@ autotrackcar/stm32f1xx_it.o: ..\Core\Src\stm32f1xx_it.c \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
-  ..\Core\Inc\stm32f1xx_it.h
+  ..\Core\Inc\stm32f1xx_it.h ..\User\Hardware\oled\oled.h \
+  ..\Core\Inc\i2c.h ..\User\Hardware\oled\OLED_Data.h
