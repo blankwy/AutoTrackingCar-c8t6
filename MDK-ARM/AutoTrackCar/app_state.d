@@ -24,4 +24,5 @@ autotrackcar/app_state.o: ..\User\App\app_state.c ..\User\App\app_state.h \
   ..\User\Hardware\key\key.h ..\User\Middleware\screen\screen.h \
   ..\User\Hardware\oled\oled.h ..\Core\Inc\i2c.h \
   ..\User\Hardware\oled\OLED_Data.h \
-  ..\User\Middleware\screen\component.h
+  ..\User\Middleware\screen\component.h ..\User\Hardware\servo\servo.h \
+  ..\Core\Inc\tim.h

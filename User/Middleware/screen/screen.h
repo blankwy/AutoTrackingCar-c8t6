@@ -54,7 +54,7 @@ void KEY_NEXT_Handler();
 void KEY_CONFIRM_Handler();
 /*=按键交互函数声明=====*/
 
-static void Screen_Cursor_Init();
+static void Screen_Cursor_Init(ScreenStateTypeDef page);
 
 
 #endif

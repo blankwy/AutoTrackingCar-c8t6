@@ -24,4 +24,5 @@ autotrackcar/component.o: ..\User\Middleware\screen\component.c \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
   ..\User\Hardware\key\key.h ..\User\Middleware\screen\screen.h \
   ..\User\Hardware\oled\oled.h ..\Core\Inc\i2c.h \
-  ..\User\Hardware\oled\OLED_Data.h
+  ..\User\Hardware\oled\OLED_Data.h ..\User\Hardware\servo\servo.h \
+  ..\Core\Inc\tim.h

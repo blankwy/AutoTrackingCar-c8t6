@@ -1,4 +1,5 @@
-autotrackcar/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
+autotrackcar/servo.o: ..\User\Hardware\servo\servo.c \
+  ..\User\Hardware\servo\servo.h ..\Core\Inc\tim.h ..\Core\Inc\main.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h \
   ..\Core\Inc\stm32f1xx_hal_conf.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h \
@@ -20,9 +21,4 @@ autotrackcar/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
-  ..\Core\Inc\dma.h ..\Core\Inc\i2c.h ..\Core\Inc\tim.h \
-  ..\Core\Inc\gpio.h ..\User\App\app_state.h ..\User\Hardware\key\key.h \
-  ..\User\Middleware\screen\screen.h ..\User\Hardware\oled\oled.h \
-  ..\User\Hardware\oled\OLED_Data.h \
-  ..\User\Middleware\screen\component.h ..\User\Hardware\servo\servo.h
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h

@@ -41,7 +41,7 @@ void Screen_PageTo(ScreenStateTypeDef page){
             is_running = 0;
             Screen_Reset();
             TopBar();
-            Screen_Cursor_Init();
+            Screen_Cursor_Init(page);
             Screen_Main_CursorTo(cursor_item);
             Screen_Fresh();
             break;
@@ -50,7 +50,7 @@ void Screen_PageTo(ScreenStateTypeDef page){
             Screen_Reset();
             TopBar();
             StopIcon();
-            Screen_Cursor_Init();
+            Screen_Cursor_Init(page);
             Screen_Main_CursorTo(cursor_item);
             Screen_Fresh();
             break;
@@ -81,11 +81,27 @@ void Screen_Main_CursorTo(CursorAt item){
 }
 
 /*注册按键光标交互监听*/
-void Screen_Cursor_Init(){
-    KEY_RevokeKeyListener(KEY_NEXT,KEY_KEYDOWN_ON_SCREEN_RUNNING);
-    KEY_RevokeKeyListener(KEY_CONFIRM,KEY_KEYDOWN_ON_SCREEN_RUNNING);
-    KEY_RegisterKeyListener(KEY_NEXT,KEY_KEYDOWN_ON_SCREEN_IDLE,KEY_NEXT_Handler);
-    KEY_RegisterKeyListener(KEY_CONFIRM,KEY_KEYDOWN_ON_SCREEN_IDLE,KEY_CONFIRM_Handler);
+void Screen_Cursor_Init(ScreenStateTypeDef page){
+    switch(page){
+        case UI_MAIN:
+                KEY_RevokeKeyListener(KEY_NEXT,KEY_KEYDOWN_ON_SCREEN_RUNNING);
+                KEY_RevokeKeyListener(KEY_CONFIRM,KEY_KEYDOWN_ON_SCREEN_RUNNING);
+                KEY_RegisterKeyListener(KEY_NEXT,KEY_KEYDOWN_ON_SCREEN_IDLE,KEY_NEXT_Handler);
+                KEY_RegisterKeyListener(KEY_CONFIRM,KEY_KEYDOWN_ON_SCREEN_IDLE,KEY_CONFIRM_Handler);
+                break;
+            case UI_RUNNING:
+                KEY_RevokeKeyListener(KEY_NEXT,KEY_KEYDOWN_ON_SCREEN_IDLE);
+                KEY_RevokeKeyListener(KEY_CONFIRM,KEY_KEYDOWN_ON_SCREEN_IDLE);
+                KEY_RegisterKeyListener(KEY_NEXT,KEY_KEYDOWN_ON_SCREEN_RUNNING,KEY_NEXT_Handler);
+                KEY_RegisterKeyListener(KEY_CONFIRM,KEY_KEYDOWN_ON_SCREEN_RUNNING,KEY_CONFIRM_Handler);
+                break;
+            default:
+                KEY_RevokeKeyListener(KEY_NEXT,KEY_KEYDOWN_ON_SCREEN_IDLE);
+                KEY_RevokeKeyListener(KEY_CONFIRM,KEY_KEYDOWN_ON_SCREEN_IDLE);
+                KEY_RevokeKeyListener(KEY_NEXT,KEY_KEYDOWN_ON_SCREEN_RUNNING);
+                KEY_RevokeKeyListener(KEY_CONFIRM,KEY_KEYDOWN_ON_SCREEN_RUNNING);
+                break;
+    }
             
     
 }

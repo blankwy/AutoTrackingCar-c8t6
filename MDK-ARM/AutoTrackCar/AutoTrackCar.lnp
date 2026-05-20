@@ -25,6 +25,7 @@
 "autotrackcar\oled.o"
 "autotrackcar\oled_data.o"
 "autotrackcar\key.o"
+"autotrackcar\servo.o"
 "autotrackcar\app_state.o"
 "autotrackcar\screen.o"
 "autotrackcar\component.o"

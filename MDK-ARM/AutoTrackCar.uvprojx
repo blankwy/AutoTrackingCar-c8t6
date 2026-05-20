@@ -340,7 +340,7 @@
               <MiscControls>-Wno-invalid-source-encoding</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../User/App;../User;../User/Hardware/oled;../User/Middleware/screen;..\User\Hardware\key</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../User/App;../User;../User/Hardware/oled;../User/Middleware/screen;../User/Hardware/key;../User/Hardware/servo</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -844,6 +844,16 @@
               <FileName>key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Hardware\key\key.c</FilePath>
+            </File>
+            <File>
+              <FileName>servo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hardware\servo\servo.c</FilePath>
+            </File>
+            <File>
+              <FileName>servo.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Hardware\servo\servo.h</FilePath>
             </File>
           </Files>
         </Group>

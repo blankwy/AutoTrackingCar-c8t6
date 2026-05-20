@@ -4,6 +4,7 @@
 #include "main.h"
 #include "key.h"
 #include "screen.h"
+#include "servo.h"
 
 typedef enum{
     SYS_INIT,

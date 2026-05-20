@@ -14,6 +14,9 @@ void StateMachine_Init(){
 
     Screen_Init();
     Screen_PageTo(UI_LOADING);
+    Servo_Init();
+    Screen_PrintFormat(1,OLED_6X8,5,30,"Servo_Init Completed!");
+    Screen_Fresh();
     sys_state = SYS_IDLE;
 }
 
@@ -38,7 +41,7 @@ void StateMachine_Run(){
             KEY_RevokeKeyListener(KEY_CONFIRM,KEY_KEYDOWN_ON_APP_STATE_IDLE);
             KEY_RegisterKeyListener(KEY_CONFIRM,KEY_KEYDOWN_ON_APP_STATE_RUNNING,ExitMode);
             //
-        
+            
             break;
         /*×Ô¶¯±ÜÕÏ*/
         case SYS_AUTO_AVOIDING:
@@ -46,7 +49,14 @@ void StateMachine_Run(){
             KEY_RevokeKeyListener(KEY_CONFIRM,KEY_KEYDOWN_ON_APP_STATE_IDLE);
             KEY_RegisterKeyListener(KEY_CONFIRM,KEY_KEYDOWN_ON_APP_STATE_RUNNING,ExitMode);
             //
-        
+            uint8_t angles[3] = {0,90,180};
+            int servo_i = 0;
+            while(1){
+                Servo_SetAngle(angles[servo_i]);
+                servo_i = (servo_i+1)%3;
+                HAL_Delay(500);
+            }
+            
             break;
         /*¸æ¾¯×´Ì¬*/
         case SYS_ALARM:
@@ -67,7 +77,6 @@ void SwitchCursorAtMode(){
 }
 
 void ConfirmModeSwitch(){
-    
     sys_state = cursor_sys_state_map[selectMode];
     
 }
